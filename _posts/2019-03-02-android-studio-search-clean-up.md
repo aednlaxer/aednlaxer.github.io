@@ -7,7 +7,6 @@ title: Getting rid of generated files in search dialog in Android Studio
 
 Have you ever seen a picture like this when looking for a file or a class in Android Studio?
 
-{{ /assets/search-fixes/search-dialog-before.png:img?width=250 alt='steam-fish-1' }}
 ![](/assets/search-fixes/search-dialog-before.png)
 
 It's populated mostly by unrelated generated files. They're always blocking you from finding the right one. Luckily, there's a way to tell Android Studio (or any flavor of IntelliJ IDEA) to ignore these files.
