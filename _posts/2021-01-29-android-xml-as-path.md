@@ -47,7 +47,7 @@ This XML drawable contains path instructions which can be mapped into a `Path` i
 Uppercase letter defines absolute coordinates, lowercase defines coordinates relative to previous instruction. Thus, `l1.84,-3.18` following `M17.6,9.48` becomes `lineTo(19.44f,6.3f)`. Quick maths:
 
 - First argument: 17.6 + 1.84 = 19.44
-- Second argument 6.3 - 3.18 = 6.3.
+- Second argument 9.48 - 3.18 = 6.3
 
 It's possible to manually build a `Path` object that matches instructions of an XML drawable. Although it'll probably take a lot of your time time and it'd be easy to make a typo.
 
