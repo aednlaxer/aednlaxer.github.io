@@ -16,7 +16,7 @@ vectorDrawable?.setBounds(0, 0, 800, 800)
 vectorDrawable?.draw(canvas)
 {% endhighlight %}
 
-This produces a vector drawable which is properly scaled and looks sharp in most cases. Although if you scale this image too much some artefacts may appear, scaled icon may become blurry. Look how sharp the text is and how pixelated the scaled shape is:
+This produces a vector drawable which is properly scaled and looks sharp in most cases. Although if you scale this image too much some artifacts may appear, scaled icon may become blurry. Look how sharp the text is and how pixelated the scaled shape is:
 
 ![](/assets/android-xml-as-path/sharp-not-really.png)
 
@@ -55,7 +55,7 @@ Read more about XML path data in [this awesome article.](https://medium.com/@ali
 
 ## Generating Path code from vector image using an online generator
 
-[codecrafted.net/svgtoandroid](https://codecrafted.net/svgtoandroid) is online generator that converts an SVG file into Java code, similar to what was demonstrated in the preivous section. Resulting code can be optimized and improved by converting it to Kotlin and checking that all variables have meaningful names. Always think twice before uploading any of your app code including SVG icons into 3rd party services.
+[codecrafted.net/svgtoandroid](https://codecrafted.net/svgtoandroid) is online generator that converts an SVG file into Java code, similar to what was demonstrated in the previous section. Resulting code can be optimized and improved by converting it to Kotlin and checking that all variables have meaningful names. Always think twice before uploading any of your app code including SVG icons into 3rd party services.
 
 ## Converting vector XML into Path programmatically
 
