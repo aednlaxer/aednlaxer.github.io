@@ -14,3 +14,8 @@ I'm an Android and Flutter developer. I started working on Android apps long tim
 I enjoy exploring cities, tasting new food and observing nature while hiking.
 
 Countries I've visited so far: Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Italy, Latvia, Malta, Netherlands, Norway, Poland, Russia, Slovakia, Spain, Sweden, UK, Ukraine, USSR (this one doesn't exist anymore but I was born there).
+
+### Contact
+
+- Email <a href="mailto:aednlaxer@pm.me">aednlaxer@pm.me</a>
+- Github: <a href="https://github.com/aednlaxer">github.com/aednlaxer</a>
