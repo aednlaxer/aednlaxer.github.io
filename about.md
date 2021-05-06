@@ -3,6 +3,8 @@ layout: page
 title: About
 ---
 
+<script src="../assets/js/aednlaxerer.js"></script>
+
 Hello! I'm Alexander!
 
 I'm an Android and Flutter developer. I started working on Android apps long time ago (I remember Ice Cream Sandwich, Action Bar Sherlock, life without Kotlin and Jetpack). Couple years ago I started looking into Flutter and now I love it!
@@ -19,3 +21,9 @@ Countries I've visited so far: Czechia, Denmark, Estonia, Finland, France, Germa
 - Github: <a href="https://github.com/aednlaxer">github.com/aednlaxer</a>
 
 The materials on this website are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY license.</a>
+
+### What's "aednlaxer"?
+
+It's my name, Alexander. I shuffled the letters in it so it became something unique.
+
+Try yourself: <a id="nickname" href="javascript:generateNickname();">alexander</a> <small>(click to shuffle).</small>
