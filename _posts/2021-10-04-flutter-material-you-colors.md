@@ -5,7 +5,7 @@ title: Flutter app with a touch of Material You colors, please
 
 Android 12 brings the third iteration of Material Design called Material You - along with other changes apps and home screen widgets may now change their look according to wallpaper colors or selected system palette.
 
-There are no design guidelines for using these new colors although Google is updating their apps - Gmail, Keep, Phone, Calendar and others have already got their Material You makeover. It feels a bit like a secret - there are no guideliness but apps are getting updated. Unfortunately, Flutter has no support for the new coloring system yet.
+There are no design guidelines for using these new colors although Google is updating their apps - Gmail, Keep, Phone, Calendar and others have already got their Material You makeover. It feels a bit like a secret - there are no guidelines but apps are getting updated. Unfortunately, Flutter has no support for the new coloring system yet.
 
 As a developer I want to support and utilize the latest available specifications and APIs. Let's get the new colors in Flutter.
 
