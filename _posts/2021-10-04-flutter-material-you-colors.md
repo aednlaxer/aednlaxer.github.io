@@ -73,4 +73,4 @@ FutureBuilder(
 
 The biggest challenge comes with widgets customization. Setting a primary swatch is simple but overriding themes for all needed widgets could be hard - it's a lot to do, to test and to maintain. And then there's dark theme. And fallback theme for other platforms where Material You colors are not supported. Let's hope Flutter will have a better and simpler solution for that.
 
-In this article I'm looking for a way to bring Mater You colors to Flutter. Can it be done? Yes. Is using these colors to style widgets a pleasant experience? Doesn't feel so.
+In this article I'm looking for a way to bring Material You colors to Flutter. Can it be done? Yes. Is using these colors to style widgets a pleasant experience? Doesn't feel so.
