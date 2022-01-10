@@ -224,6 +224,8 @@ table {
   // note: only change margin for title,date if inside post block
   .post-title {
     margin-top: 0;
+    font-family: $code-font-family;
+    font-size: 1.75rem;
 
     a {
       border-bottom: 1px $post-title-underline_color solid;
