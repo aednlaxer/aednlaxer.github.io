@@ -6,25 +6,45 @@ on:
     branches:
       - main
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   publish:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout code"
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: "Setup Dart"
+      - name: Setup Dart
         uses: dart-lang/setup-dart@v1.3
 
-      - name: "Setup Flutter"
+      - name: Setup Flutter
         uses: subosito/flutter-action@v2
 
-      - name: "Build Jaspr"
+      - name: Build Jaspr
         run: |
           dart pub global activate jaspr_cli
           jaspr build --verbose
 
-      - name: "Upload build artifacts"
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           path: "build/jaspr"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
