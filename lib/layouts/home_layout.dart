@@ -15,8 +15,7 @@ class HomeLayout extends PageLayoutBase {
   @override
   Iterable<Component> buildHead(Page page) sync* {
     yield* super.buildHead(page);
-    yield Constants.fontsHeadLink;
-    yield Constants.faviconHeadLink;
+    yield* Constants.headLinks;
   }
 
   @override
