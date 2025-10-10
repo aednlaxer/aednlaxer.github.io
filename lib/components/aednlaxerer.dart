@@ -24,12 +24,12 @@ class AednlaxererState extends State<Aednlaxerer> {
     if (component.value.isEmpty || component.value.length < 2) return;
 
     final letters = component.value.split('');
-    final shuffled = [
+    final shuffled = <String>[
       // First letter is always the same
       letters.first,
 
       // Middle letters are randomly shuffled
-      letters
+      ...letters
         ..removeAt(0)
         ..removeAt(letters.length - 1)
         ..shuffle(),
