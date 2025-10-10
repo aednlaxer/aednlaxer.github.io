@@ -148,6 +148,13 @@ abstract class GlobalStyles {
       overflow: Overflow.auto,
     ),
 
+    // Remove extra padding for the first line of <pre><code>...</code></pre>
+    css('pre', [
+      css('& code').styles(
+        padding: Spacing.zero,
+      ),
+    ]),
+
     css('blockquote', [
       css('&').styles(
         padding: Spacing.all(0.5.rem),
