@@ -120,5 +120,5 @@ const _legacyRoutes = {
   '/2021/01/29/android-xml-as-path': '/posts/2021-01-29-android-xml-as-path',
   '/2021/04/26/android-splash-screen-eyecandy': '/posts/2021-04-26-android-splash-screen-eyecandy',
   '/2021/10/04/flutter-material-you-colors': '/posts/2021-10-04-flutter-material-you-colors',
-  '/2023/03/21/flutter-app-store-graphics': '/posts/2023-03-21-flutter-app-store-graphic',
+  '/2023/03/21/flutter-app-store-graphics': '/posts/2023-03-21-flutter-app-store-graphics',
 };
