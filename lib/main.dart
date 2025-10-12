@@ -10,6 +10,7 @@ import 'package:jaspr/server.dart';
 import 'package:jaspr_content/components/code_block.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
+import 'package:jaspr_router/jaspr_router.dart';
 import 'package:path/path.dart' as path;
 import 'package:syntax_highlight_lite/syntax_highlight_lite.dart';
 
@@ -24,6 +25,19 @@ Future<void> main() async {
     ContentApp.custom(
       loaders: [FilesystemLoader('content', debugPrint: false)],
       eagerlyLoadAllPages: true,
+      routerBuilder: (routes) {
+        return Router(
+          routes: [
+            for (final r in routes) ...r,
+
+            for (final legacyRoute in _legacyRoutes.entries)
+              Route(
+                path: legacyRoute.key,
+                redirect: (context, state) => legacyRoute.value,
+              ),
+          ],
+        );
+      },
       configResolver: PageConfig.all(
         enableFrontmatter: true,
         dataLoaders: [FilesystemDataLoader('content/_data')],
@@ -99,3 +113,12 @@ String pageUrlToPageId(String pageUrl) {
 
   return '${formatDateForPath(date)}/$pageName';
 }
+
+// Legacy routes from old blog engine
+const _legacyRoutes = {
+  '/2019/03/02/android-studio-search-clean-up': '/posts/2019-03-02-android-studio-search-clean-up',
+  '/2021/01/29/android-xml-as-path': '/posts/2021-01-29-android-xml-as-path',
+  '/2021/04/26/android-splash-screen-eyecandy': '/posts/2021-04-26-android-splash-screen-eyecandy',
+  '/2021/10/04/flutter-material-you-colors': '/posts/2021-10-04-flutter-material-you-colors',
+  '/2023/03/21/flutter-app-store-graphics': '/posts/2023-03-21-flutter-app-store-graphic',
+};
