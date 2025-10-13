@@ -1,4 +1,5 @@
 import 'package:aednlaxer_blog/components/aednlaxerer.dart';
+import 'package:aednlaxer_blog/components/spoiler.dart';
 import 'package:aednlaxer_blog/jaspr_options.dart';
 import 'package:aednlaxer_blog/layouts/archive_layout.dart';
 import 'package:aednlaxer_blog/layouts/page_layout.dart';
@@ -58,6 +59,7 @@ Future<void> main() async {
               ]);
             },
           ),
+          const Spoiler(),
         ],
         layouts: [
           HomeLayout(),
@@ -73,7 +75,10 @@ Future<void> main() async {
 }
 
 @css
-List<StyleRule> get styles => GlobalStyles.styles;
+List<StyleRule> get styles => [
+  ...GlobalStyles.styles,
+  ...Spoiler.styles,
+];
 
 AtomOutput get atomOutput => AtomOutput(
   id: Constants.siteUrl,

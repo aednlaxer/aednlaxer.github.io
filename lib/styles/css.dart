@@ -186,6 +186,10 @@ abstract class GlobalStyles {
       margin: Spacing.only(left: Unit.auto, right: Unit.auto),
     ),
 
+    css('.post-content').styles(
+      margin: Spacing.only(bottom: 64.px),
+    ),
+
     css('.main_header', [
       css('&').styles(
         padding: Spacing.only(top: 1.rem, bottom: 1.rem),
