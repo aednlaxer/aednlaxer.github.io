@@ -23,20 +23,7 @@ class AednlaxererState extends State<Aednlaxerer> {
   void _shuffleName() {
     if (component.value.isEmpty || component.value.length < 2) return;
 
-    final letters = component.value.split('');
-    final shuffled = <String>[
-      // First letter is always the same
-      letters.first,
-
-      // Middle letters are randomly shuffled
-      ...letters
-        ..removeAt(0)
-        ..removeAt(letters.length - 1)
-        ..shuffle(),
-
-      // Last letter is always the same
-      letters.last,
-    ].join();
+    final shuffled = _createShuffledName(component.value);
     setState(() => currentName = shuffled);
   }
 
@@ -47,5 +34,30 @@ class AednlaxererState extends State<Aednlaxerer> {
       href: '',
       [text(currentName)],
     );
+  }
+
+  String _createShuffledName(String name) {
+    final letters = component.value.split('');
+    final first = letters.first;
+    final last = letters.last;
+    final shuffled = <String>[
+      // First letter is always the same
+      first,
+
+      // Middle letters are randomly shuffled
+      ...letters
+        ..removeAt(0)
+        ..removeAt(letters.length - 1)
+        ..shuffle(),
+
+      // Last letter is always the same
+      last,
+    ].join();
+
+    if (shuffled.startsWith('anal')) {
+      return _createShuffledName(name);
+    }
+
+    return shuffled;
   }
 }
