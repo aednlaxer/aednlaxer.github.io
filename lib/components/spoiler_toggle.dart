@@ -1,3 +1,4 @@
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
 
@@ -39,7 +40,7 @@ class _SpoilerToggleState extends State<SpoilerToggle> {
     return div(
       classes: 'spoiler-title',
       events: {'click': _toggle},
-      [text(component.title)],
+      [Component.text(component.title)],
     );
   }
 }

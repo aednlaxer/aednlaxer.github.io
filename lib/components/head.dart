@@ -1,4 +1,5 @@
 import 'package:aednlaxer_blog/utils/constants.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 /// A component that displays the main header of the blog with site menu.
@@ -11,17 +12,17 @@ class HeadComponent extends StatelessComponent {
           classes: 'logo',
           href: '/',
           [
-            strong([text(Constants.siteTitle)]),
+            strong([Component.text(Constants.siteTitle)]),
           ],
         ),
         small([
-          a(href: 'atom.xml', [text('RSS')]),
+          a(href: 'atom.xml', [Component.text('RSS')]),
         ]),
         small([
-          a(href: 'archive', [text('Archive')]),
+          a(href: 'archive', [Component.text('Archive')]),
         ]),
         small([
-          a(href: 'about', [text('About')]),
+          a(href: 'about', [Component.text('About')]),
         ]),
       ]),
     ]);

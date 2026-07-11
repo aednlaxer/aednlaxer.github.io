@@ -1,4 +1,4 @@
-import 'package:jaspr/jaspr.dart';
+import 'package:jaspr/dom.dart';
 
 class _StyleConstants {
   // Font families

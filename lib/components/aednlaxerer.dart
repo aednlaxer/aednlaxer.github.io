@@ -1,3 +1,4 @@
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 /// Funny component to create your own aednlaxer-like name from [value]
@@ -32,7 +33,7 @@ class AednlaxererState extends State<Aednlaxerer> {
     return a(
       onClick: _shuffleName,
       href: '',
-      [text(currentName)],
+      [Component.text(currentName)],
     );
   }
 

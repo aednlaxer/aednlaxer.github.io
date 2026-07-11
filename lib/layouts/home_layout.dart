@@ -2,6 +2,7 @@ import 'package:aednlaxer_blog/components/article.dart';
 import 'package:aednlaxer_blog/components/head.dart';
 import 'package:aednlaxer_blog/utils/constants.dart';
 import 'package:aednlaxer_blog/utils/post_loader.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -31,8 +32,8 @@ class HomeLayout extends PageLayoutBase {
         for (final post in posts) _buildFullPost(post),
       ]),
       div(classes: 'footer', [
-        text('Older articles available in '),
-        a(href: '/archive', [text('the archive')]),
+        Component.text('Older articles available in '),
+        a(href: '/archive', [Component.text('the archive')]),
       ]),
     ]);
   }

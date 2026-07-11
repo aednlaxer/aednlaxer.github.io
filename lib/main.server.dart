@@ -1,12 +1,13 @@
 import 'package:aednlaxer_blog/components/aednlaxerer.dart';
 import 'package:aednlaxer_blog/components/spoiler.dart';
-import 'package:aednlaxer_blog/jaspr_options.dart';
+import 'main.server.options.dart';
 import 'package:aednlaxer_blog/layouts/archive_layout.dart';
 import 'package:aednlaxer_blog/layouts/page_layout.dart';
 import 'package:aednlaxer_blog/layouts/post_layout.dart';
 import 'package:aednlaxer_blog/secondary_output/atom_output.dart';
 import 'package:aednlaxer_blog/utils/date_utils.dart';
 import 'package:aednlaxer_blog/utils/constants.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 import 'package:jaspr_content/components/code_block.dart';
 import 'package:jaspr_content/jaspr_content.dart';
@@ -19,7 +20,7 @@ import 'layouts/home_layout.dart';
 import 'styles/css.dart';
 
 Future<void> main() async {
-  Jaspr.initializeApp(options: defaultJasprOptions);
+  Jaspr.initializeApp(options: defaultServerOptions);
   final codeTheme = await HighlighterTheme.loadLightTheme();
 
   runApp(
@@ -45,7 +46,7 @@ Future<void> main() async {
         templateEngine: MustacheTemplateEngine(),
         parsers: [MarkdownParser()],
         components: [
-          CodeBlock(theme: codeTheme),
+          CodeBlock(codeTheme: codeTheme),
           CustomComponent(
             pattern: RegExp(r'Aednlaxerer', caseSensitive: false),
             builder: (name, attr, child) {

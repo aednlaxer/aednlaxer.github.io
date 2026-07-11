@@ -58,7 +58,7 @@ class AtomOutput extends SecondaryOutput {
       builder: (context) {
         context.setHeader('Content-Type', 'application/atom+xml');
         context.setStatusCode(200, responseBody: _renderAtomFeed(context.pages));
-        return text('');
+        return Component.text('');
       },
     );
   }

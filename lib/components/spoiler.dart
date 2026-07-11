@@ -1,6 +1,8 @@
 import 'package:aednlaxer_blog/components/spoiler_toggle.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:jaspr_content/theme.dart';
 
 /// A spoiler component that shows/hides content when clicked.
 class Spoiler implements CustomComponent {
@@ -58,6 +60,9 @@ class Spoiler implements CustomComponent {
       ),
     ]),
   ];
+
+  @override
+  SpoilerTheme get theme => SpoilerTheme();
 }
 
 /// Wrapper component that renders the spoiler structure
@@ -79,5 +84,34 @@ class _SpoilerWrapper extends StatelessComponent {
         [child],
       ),
     ]);
+  }
+}
+
+class SpoilerTheme extends ThemeExtension<SpoilerTheme> {
+  SpoilerTheme({
+    this.titleColor,
+    this.hoverBorderColor,
+  });
+  final Color? titleColor;
+  final Color? hoverBorderColor;
+  static const _titleVar = '--spoiler-title-color';
+  static const _hoverBorderVar = '--spoiler-hover-border-color';
+  @override
+  SpoilerTheme copyWith({
+    Color? titleColor,
+    Color? hoverBorderColor,
+  }) {
+    return SpoilerTheme(
+      titleColor: titleColor ?? this.titleColor,
+      hoverBorderColor: hoverBorderColor ?? this.hoverBorderColor,
+    );
+  }
+
+  @override
+  Map<String, Object> buildVariables(ContentTheme theme) {
+    return {
+      _titleVar: titleColor ?? const Color('#0064a9'),
+      _hoverBorderVar: hoverBorderColor ?? const Color('#0000001a'),
+    };
   }
 }

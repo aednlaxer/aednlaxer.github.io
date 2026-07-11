@@ -1,4 +1,5 @@
 import 'package:aednlaxer_blog/utils/date_utils.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 /// A component that displays a blog article.
@@ -21,10 +22,10 @@ class ArticleComponent extends StatelessComponent {
     return article(classes: 'post', [
       if (date != null)
         div(classes: 'post-date', [
-          text(formatDate(date!)),
+          Component.text(formatDate(date!)),
         ]),
       h1(classes: 'post-title', [
-        if (slug != null) a(href: 'posts/$slug', [text(title)]) else text(title),
+        if (slug != null) a(href: 'posts/$slug', [Component.text(title)]) else Component.text(title),
       ]),
       div(classes: 'post-content', [child]),
     ]);
