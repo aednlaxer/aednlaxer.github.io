@@ -123,3 +123,5 @@ It may seem easier to use a real device or emulator to create screenshots rather
 App store images don’t have to be frame-and-text-boring as shown in the example above. You can create more engaging images. For example, a screenshot embedded into an isometric device [frame](https://www.figma.com/community/file/1154838740693304766) using Flutter’s `Transform` widget:
 
 ![Example of a fancier screenshot: app screenshot is embedded into an isometric device frame](/assets/flutter-app-store-graphics/fancy.png)
+
+*Update*: if Flutter struggles to run the test, you might need to wrap your call in ["runAsync"](https://api.flutter.dev/flutter/flutter_test/WidgetTester/runAsync.html).
